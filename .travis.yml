@@ -17,6 +17,7 @@ env:
   CXX=g++-4.8
 
 install:
+  - npm install process-nextick-args util-deprecate
   - npm install karma karma-jasmine jasmine-core karma-phantomjs-launcher --save-dev
   - npm install -g gulp bower cordova ionic karma-cli
   - npm install
@@ -46,3 +47,8 @@ notifications:
   email:
     recipients:
       - pahakalle@protonmail.com
+
+after_success:
+  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='^feature/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=pahakalle/blockup /tmp/travis-automerge"
