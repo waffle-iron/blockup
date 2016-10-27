@@ -14,10 +14,10 @@ describe('Chats Unit Tests', function(){
         expect(Chats.all().length).toEqual(5);
     }));
 
-    it('has Max as chat with id 1', inject(function(Chats) {
+    it('has Testaaja2 as chat with id 1', inject(function(Chats) {
         var oneChat = {
             id: 1,
-            name: 'Max Lynx',
+            name: 'Testaaja2',
             notes: 'Odd obsession with everything',
             face: 'https://avatars3.githubusercontent.com/u/11214?v=3&amp;s=460'
         };
@@ -25,4 +25,3 @@ describe('Chats Unit Tests', function(){
         expect(Chats.get(1).name).toEqual(oneChat.name);
     }));
 });
-
