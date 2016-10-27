@@ -2,7 +2,7 @@ sudo: false
 
 language: node_js
 node_js:
-  - "5.1"
+  - "6.6.0"
 
 addons:
   apt:
@@ -17,7 +17,7 @@ env:
   CXX=g++-4.8
 
 install:
-  - npm install process-nextick-args util-deprecate
+  - npm install -g process-nextick-args util-deprecate
   - npm install karma karma-jasmine jasmine-core karma-phantomjs-launcher --save-dev
   - npm install -g gulp bower cordova ionic karma-cli
   - npm install
