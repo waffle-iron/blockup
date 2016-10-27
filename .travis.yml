@@ -17,8 +17,10 @@ env:
   CXX=g++-4.8
 
 install:
-  - npm install -g gulp bower cordova ionic
+  - npm install karma karma-jasmine jasmine-core karma-phantomjs-launcher --save-dev
+  - npm install -g gulp bower cordova ionic karma-cli
   - npm install
+  - bower install angular-mocks --save-dev
   - bower update
 
 before_script:
@@ -36,7 +38,6 @@ before_script:
 script:
   - npm install
   - grunt test
-  - grunt pushCoverage
   - ionic platform remove android
   - ionic platform add android
   - ionic build android --device --release
