@@ -20,6 +20,7 @@ module.exports = function(config) {
       '../client/Blockup/www/app/**/*.js',
       '../client/Blockup/www/js/**/*.js',
       '../bower_components/angular-mocks/angular-mocks.js',
+      '../client/Blockup/www/lib/angular*/*.js',
       'unit-tests/**/*.js',
       '../client/Blockup/www/lib/pouchdb/dist/pouchdb.min.js',
       '../client/Blockup/www/lib/underscore/underscore-min.js'
