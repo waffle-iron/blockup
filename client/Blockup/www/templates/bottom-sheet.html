@@ -1,0 +1,15 @@
+<ion-bottom-sheet-view>
+    <ion-header-bar align-title="left">
+       <h1 class="title">Uusi keskutelu</h1>
+       <button class="button button-icon icon ion-android-close" ng-click="modal.hide()"></button>
+   </ion-header-bar>
+   <ion-content class="padding">
+     <div class="list">
+       <label class="item item-input">
+         <span class="input-label">Nimi</span>
+         <input ng-model="newItems.name" type="text">
+       </label>
+       <button class="button button-full button-positive" ng-click="createPost(newItems)">Lisää</button>
+     </div>
+   </ion-content>
+ </ion-bottom-sheet-view>

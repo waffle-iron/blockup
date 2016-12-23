@@ -1,0 +1,67 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <!-- TABS -->
+    <ion-tabs>
+      <ion-tab title="Playlist" icon-off="ion-alert" icon-on="ion-alert" href="#/app/info">
+        <ion-nav-view name="tab-info"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Search" icon-off="ion-log-in" icon-on="ion-log-in" href="#/app/login">
+        <ion-nav-view name="tab-login"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="chat" icon-off="ion-android-chat" icon-on="ion-android-chat" href="#/app/chat">
+        <ion-nav-view name="tab-chat"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Browse" icon-off="ion-social-rss" icon-on="ion-social-rss" href="#/app/browse">
+        <ion-nav-view name="tab-browse"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Blog" icon-off="ion-social-wordpress" icon-on="ion-social-wordpress" href="#/app/blog">
+        <ion-nav-view name="tab-blog"></ion-nav-view>
+      </ion-tab>
+
+    </ion-tabs>
+
+  </ion-side-menu-content>
+   <!-- Side Menu (left) -->
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title"ng-if="!activeChannel">Kirjaudu sisään!</h1>
+      <h1 class="title"ng-if="activeChannel">{{activeChannel}} as {{userName}}</h1>
+       <div class="buttons">
+        <button class="button button-icon icon ion-log-out" ng-click="logout()"></button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list ng-repeat="channel in channels">
+          <ion-item nav-clear menu-close ng-click="joinChannel(channel)" ng-class="{'item-calm': channel == activeChannel}">
+            {{channel}}
+          </ion-item>
+        </ion-list>
+        <div class="">
+          <div class="bar item-input-inset">
+          <label class="item-input-wrapper">
+            <i class="icon placeholder-icon"></i>
+            <input type="text" placeholder="Liity.." ng-model="channel.name">
+          </label>
+          <button class="button button-positive" ng-click="joinChannel(channel.name)">
+            Liity
+          </button>
+        </div>
+        </div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,37 @@
+<ion-view title="Blogi">
+    <ion-pane ng-controller="FeedController">
+      <ion-content>
+          <style>.title {
+              white-space: normal;
+              text-decoration: none;
+              color: #00A0B0;
+          }
+          .item .description {
+              color: #8F8F8F;
+              white-space: normal;
+          }
+          .item .footer {
+              margin-top: 15px;
+          }
+          .item .author {
+              color: #4D4C4C;
+              font-size: 14px;
+          }</style>
+          <ion-refresher pulling-text="Pull to Refresh..." on-refresh="refreshFeed()"></ion-refresher>
+
+          <ion-list>
+              <ion-item ng-repeat="feed in feeds" class="">
+                  <a href="{{feed.link}}" ng-bind-html="feed.title" class="title"></a>
+                  <p ng-bind-html="feed.contentSnippet" class="description"></p>
+                  <div class="footer">
+                      <span class="item-note">{{feed.publishedDate | limitTo:16}}</span>
+                      <span class="author">Kalle</span>
+                      <!-- TODO: Lisää author blogin feediin -->
+                      <!--<span class="author">-{{feed.author}}</span>-->
+                  </div>
+              </ion-item>
+          </ion-list>
+
+      </ion-content>
+   </ion-pane>
+</ion-view>

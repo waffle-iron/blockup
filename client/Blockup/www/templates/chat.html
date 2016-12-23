@@ -1,0 +1,31 @@
+<ion-view title="Chat">
+<!--<ion-header-bar class="bar-positive">
+  <button class="button button-icon icon ion-navicon"></button>
+  <h1 class="title">Chatting in {{activeChannel}} as {{userName}}</h1>
+   <div class="buttons">
+    <button class="button button-icon icon ion-log-out" ng-click="logout()"></button>
+  </div>
+</ion-header-bar>-->
+<ion-pane>
+<ion-content>
+  <div class="list">
+      <div class="item item-avatar" ng-repeat="message in messages">
+        <img src="img/noicon.png" alt="{{message.time}}">
+        <h2>{{message.name}}</h2>
+        <p>{{message.message}}</p>
+      </div>
+  </div>
+</ion-content>
+<ion-footer-bar align-title="left">
+  <div class="item-input-inset" style="width: 100%">
+    <label class="item-input-wrapper">
+      <i class="icon placeholder-icon"></i>
+      <input type="text" placeholder="Kirjoita viesti tähän.." ng-model="draft.message">
+    </label>
+    <button class="button button-positive" ng-click="sendMessage(draft)">
+      Lähetä
+    </button>
+  </div>
+</ion-footer-bar>
+</ion-pane>
+</ion-view>

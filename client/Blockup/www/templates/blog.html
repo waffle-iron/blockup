@@ -1,0 +1,15 @@
+<ion-view title="Foorumi">
+  <ion-content>
+    <ion-refresher on-refresh="doRefresh()">
+
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="item in items" href="#/app/info">
+        {{item}}
+      </ion-item>
+    </ion-list>
+    <button class="button bar ion-compose" ng-click="modal.show()">
+      Luo uusi keskustelu
+    </button>
+  </ion-content>
+</ion-view>
