@@ -21,7 +21,7 @@ install:
   - npm install karma karma-jasmine jasmine-core karma-phantomjs-launcher --save-dev
   - npm install -g gulp bower cordova ionic karma-cli
   - npm install
-  - bower install angular-mocks --save-dev
+# - bower install angular-mocks --save-dev
   - bower update
 
 before_script:
@@ -35,6 +35,7 @@ before_script:
   - echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter extra-google-m2repository
   - export ANDROID_HOME=$PWD/android-sdk-linux
   - export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
+  - cd client/Blockup
 
 script:
   - npm install
@@ -48,7 +49,7 @@ notifications:
     recipients:
       - pahakalle@protonmail.com
 
-after_success:
-  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
-  - "chmod a+x /tmp/travis-automerge"
-  - "BRANCHES_TO_MERGE_REGEX='^feature/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=pahakalle/blockup /tmp/travis-automerge"
+#after_success:
+#  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+#  - "chmod a+x /tmp/travis-automerge"
+#  - "BRANCHES_TO_MERGE_REGEX='^feature/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=pahakalle/blockup /tmp/travis-automerge"
