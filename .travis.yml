@@ -43,7 +43,7 @@ script:
   - ionic platform remove android
   - ionic platform add android
   - ionic build android --device --release
-  - ls ionic info
+# - ls ionic info
 notifications:
   email:
     recipients:
