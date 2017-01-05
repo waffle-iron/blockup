@@ -1,10 +1,18 @@
-[![Stories in Ready](https://badge.waffle.io/pahakalle/blockup.png?label=ready&title=Ready)](https://waffle.io/pahakalle/blockup)
 # Blockup
+[![Stories in Ready](https://badge.waffle.io/pahakalle/blockup.png?label=ready&title=Ready)](https://waffle.io/pahakalle/blockup)
+[![Linux Build](https://travis-ci.org/pahakalle/blockup.svg?branch=develop)](https://travis-ci.org/pahakalle/blockup)
 
 > Koulu projekti
 
 > Android sovellus jonka idea on auttaa kaikenikäisiä kiusaamista kokevia ihmisi. Tarjoamalla tukea ja yhteisö apua
 
+
+## For Testing
+
+## First step
+```
+cd into the client/blockup folder
+```
 
 ## Dev
 
@@ -25,7 +33,7 @@ $ ionic serve
 ### Build
 
 ```
-$ cordova build --release android
+$ ionic build --release android
 ```
 <!---
 Lisää mahdollisesti grunt
