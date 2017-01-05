@@ -1,3 +1,5 @@
+# TODO: Add some actuall test for this. client and server
+
 sudo: false
 
 language: node_js
@@ -39,7 +41,7 @@ before_script:
 
 script:
   - npm install
-  - grunt test
+#  - grunt test
   - ionic platform remove android
   - ionic platform add android
   - ionic build android --device --release
@@ -48,6 +50,8 @@ notifications:
   email:
     recipients:
       - pahakalle@protonmail.com
+
+#Auto merge if success
 
 #after_success:
 #  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
