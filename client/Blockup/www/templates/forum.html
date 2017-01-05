@@ -1,5 +1,25 @@
-<ion-view view-title="ForumiPostaus">
+<!-- TODO: Add title from the id/database-->
+<!-- TODO: need a styling!!!-->
+<ion-view view-title="">
    <ion-content>
-     <h1>Playlist</h1>
+     <ion-content>
+       <ion-refresher on-refresh="doRefresh()">
+
+       </ion-refresher>
+       <ion-list>
+         <!-- TODO: Add comment section that takes data from database as json -->
+         <!-- TODO: Possible liking feature?-->
+         <ion-item ng-repeat="comment in comments" href="">
+           {{comment}}
+         </ion-item>
+
+       </ion-list>
+
+       <button class="button bar ion-compose" ng-click="modal.show()">
+         Kommentoi
+       </button>
+
+     </ion-content>
+
    </ion-content>
  </ion-view>

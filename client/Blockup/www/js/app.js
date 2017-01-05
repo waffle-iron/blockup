@@ -1,4 +1,4 @@
-// Ionic Starter App
+// Ionic Blockup App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -88,7 +88,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
 
    .state('app.forum', {
      url: "/forum",
-     templateUrl: "templates/forum"
+     templateUrl: "templates/forum.html"
    })
 
    .state('app.info', {

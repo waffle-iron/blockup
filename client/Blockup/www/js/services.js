@@ -1,5 +1,4 @@
-/*TODO: Buy a server and add its ip here and edit some configs*/
-var baseUrl = 'http://212.24.107.90:8080/';
+var baseUrl = 'https://kallelaine.com:8080/';
 // Create the PouchDB database instance
 var localDB = new PouchDB("webspeaksdb");
 angular.module('services', [])

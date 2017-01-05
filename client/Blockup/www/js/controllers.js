@@ -1,4 +1,5 @@
 // TODO: Merge login and chat tab, so that there no more login tab
+// TODO: Check for the maybe missing semicolons that maybe are causing trouble
 angular.module('starter.controllers', ['services'])
 
 .controller('LoginCtrl', function($scope, $state, Auth) {
@@ -19,6 +20,7 @@ angular.module('starter.controllers', ['services'])
 		})
 	}
 })
+
 .controller('AppCtrl', function($scope, $state, $filter, socket, Auth) {
 	//Ensure they are authed first.
 	if(Auth.currentUser() == null) {
@@ -256,6 +258,9 @@ angular.module('starter.controllers', ['services'])
     $scope.initFeed();
 })
 
+// TODO: Add get from database (PouchDB) as json
+// TODO: create new Modal for showing the comments and commentting
+
 .controller('ForumController', function($scope, $timeout,$ionicModal) {
   $scope.items = ['Kiusaaminen voi olla rikos', 'Koulukiusaaminen', 'Työpaikkakiusaaminen', 'Nettikiusaaminen', 'Masennus', 'Tarinatuokio'];
 
@@ -275,6 +280,7 @@ angular.module('starter.controllers', ['services'])
 
     console.log('Refreshing!');
     $timeout( function() {
+
       //simulate async response
       $scope.items.push('Uusi keskustelu nro:' + Math.floor(Math.random() * 1000) + 4);
 
@@ -295,6 +301,7 @@ angular.module('starter.controllers', ['services'])
       template: '<div class="modal-wrapper" ng-transclude></div>'
     };
   }])
+
 .directive('ionBottomSheetView', function() {
   return {
     restrict: 'E',

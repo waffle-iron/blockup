@@ -1,8 +1,15 @@
+// TODO: check code for security flaws
 var Q = require('q');
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser')
-var server = require('http').createServer(app);
+var bodyParser = require('body-parser');
+//var http = require('http');
+const fs = require('fs');
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/kallelaine.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/kallelaine.com/cert.pem')
+};
+const server = require('https').createServer(options, app);
 var io = require('socket.io').listen(server);
 var redis = require('redis');
 // var config = require('./libs/config');
@@ -11,6 +18,7 @@ var moment = require('moment');
 var connections = 0;
 
 var PORT = 8080;
+var IP = 'kallelaine.com';
 var REDIS_PORT = 6379;
 var REDIS_HOST = 'localhost';
 
@@ -28,13 +36,13 @@ app.use(bodyParser.json())
 // parse application/vnd.api+json as json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 
-//Include the client files as well.
+// Include the client files as well.
 app.use(express.static(__dirname + '/client/Blockup/www'));
 
-server.listen(PORT, function() {
-    console.log('RedisChat now listening on port: ' + PORT + '\n');
-});
+// Add listen to server
+server.listen(PORT, IP);
 
+server
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -51,6 +59,7 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 
 // TODO: Lisää admin käyttäjän tunnistus ja tutki mahdollisia lukittuja ryhmiä
+// TODO: katso toimiiko alla oleva functio
 
 app.post('/app/login', function(req, resp) {
   // console.log(req);
