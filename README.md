@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/pahakalle/blockup.png?label=ready&title=Ready)](https://waffle.io/pahakalle/blockup)
 # Blockup
 
 > Koulu projekti
