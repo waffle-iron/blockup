@@ -1,45 +1,44 @@
-# Blockup
-[![Stories in Ready](https://badge.waffle.io/pahakalle/blockup.png?label=ready&title=Ready)](https://waffle.io/pahakalle/blockup)
-[![Linux Build](https://travis-ci.org/pahakalle/blockup.svg?branch=develop)](https://travis-ci.org/pahakalle/blockup)
+Blockup
+=====================
 
-> Koulu projekti
+Projekit joka alkoi koulu projektina
+Mutta projektin loputtua päätin jatkaa kehitystä omana projektinani.
 
-> Android sovellus jonka idea on auttaa kaikenikäisiä kiusaamista kokevia ihmisi. Tarjoamalla tukea ja yhteisö apua
+## Käyttö
 
+We recommend using the `ionic` utility to create new Ionic projects that are based on this project but use a ready-made starter template.
 
-## For Testing
+For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
 
-## First step
+```bash
+$ sudo npm install -g ionic
 ```
-cd into the client/blockup folder
+
+Then run:
+
+```bash
+$ sudo npm install -g ionic
+$ ionic start myProject tabs
 ```
 
-## Dev
+More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page.
 
-```
+## Installation
+
+While we recommend using the `ionic` utility to create new Ionic projects, you can use this repo as a barebones starting point to your next Ionic app.
+
+To use this project as is, first clone the repo from GitHub, then run:
+
+```bash
+$ cd client/Blockup
+$ sudo npm install -g cordova ionic
 $ npm install
-```
-### Test
-
-```
-$ gulp test
-```
-### Run
-
-```
 $ ionic serve
 ```
 
-### Build
+Warning: Projekti on vielä kehitys vaiheessa.
 
-```
-$ ionic build --release android
-```
-<!---
-Lisää mahdollisesti grunt
-Builds the app for android using [Ionic](https://github.com/electron-userland/electron-packager).
--->
 
-## License
+## Issues
+Jos nyt päätät kuitenkin kokeilla projektia ja löydät virheen muista reportoida se issues osioon
 
-Apache-2.0 © [Kalle Laine]
